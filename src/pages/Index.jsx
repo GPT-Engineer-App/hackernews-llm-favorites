@@ -29,11 +29,11 @@ const Index = () => {
         <Heading fontSize="4xl" textAlign="center" color="white">Discover LLM Stories</Heading>
         <Text fontSize="lg" color="gray.300">Explore recent Hacker News stories mentioning Large Language Models.</Text>
         <Input placeholder="Search stories..." onChange={handleSearch} size="lg" />
-        <SimpleGrid columns={1} spacing={5} w="full">
+        <SimpleGrid columns={2} spacing={5} w="full">
           {stories.map(story => (
-            <Box key={story.objectID} p={5} shadow="md" borderWidth="1px" bg={useColorModeValue('white', 'gray.700')} borderRadius="md">
-              <Heading fontSize="xl">{story.title}</Heading>
-              <Text mt={4}>{story.author}</Text>
+            <Box key={story.objectID} p={3} shadow="md" borderWidth="1px" bg={useColorModeValue('white', 'gray.700')} borderRadius="md">
+              <Heading fontSize="lg">{story.title}</Heading>
+              <Text mt={2}>{story.author}</Text>
               <IconButton aria-label="Add to favorites" icon={<FaHeart />} onClick={() => addToFavorites(story)} />
             </Box>
           ))}
